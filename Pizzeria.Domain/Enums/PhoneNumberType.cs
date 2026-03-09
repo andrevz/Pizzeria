@@ -1,4 +1,4 @@
-namespace PizzeriaOvertime.Domain.Enums;
+namespace Pizzeria.Domain.Enums;
 
 public enum PhoneNumberType
 {

@@ -1,6 +1,6 @@
-using PizzeriaOvertime.Domain.Enums;
+using Pizzeria.Domain.Enums;
 
-namespace PizzeriaOvertime.Domain.ValueObjects;
+namespace Pizzeria.Domain.ValueObjects;
 
 public record PhoneNumber
 {

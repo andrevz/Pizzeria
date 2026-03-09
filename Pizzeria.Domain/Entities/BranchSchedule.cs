@@ -1,4 +1,4 @@
-namespace PizzeriaOvertime.Domain.Entities;
+namespace Pizzeria.Domain.Entities;
 
 public class BranchSchedule
 {

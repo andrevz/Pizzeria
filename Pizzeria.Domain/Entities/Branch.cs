@@ -1,6 +1,6 @@
-using PizzeriaOvertime.Domain.ValueObjects;
+using Pizzeria.Domain.ValueObjects;
 
-namespace PizzeriaOvertime.Domain.Entities;
+namespace Pizzeria.Domain.Entities;
 
 public class Branch
 {
