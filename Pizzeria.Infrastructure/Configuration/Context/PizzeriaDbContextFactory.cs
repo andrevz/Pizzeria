@@ -7,7 +7,8 @@ public class PizzeriaDbContextFactory : IDesignTimeDbContextFactory<PizzeriaDbCo
 {
     public PizzeriaDbContext CreateDbContext(string[] args)
     {
-        var connectionString = Environment.GetEnvironmentVariable("pizzeria_db") ?? "";
+        var connectionString = Environment.GetEnvironmentVariable("pizzeria_db") 
+            ?? "Host=localhost;Database=pizzeria_db;Username=admin;Password=admin;";
 
         var optionsBuilder = new DbContextOptionsBuilder<PizzeriaDbContext>();
         optionsBuilder.UseNpgsql(connectionString, options =>

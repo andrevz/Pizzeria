@@ -12,7 +12,9 @@ public class Branch : AuditableEntity
     public bool IsOpen { get; private set; }
 
     public IReadOnlyCollection<BranchSchedule> Schedules => _schedules.AsReadOnly();
-    
+
+    private Branch() { }
+
     private Branch(string name, string address, PhoneNumber phone, bool isOpen)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);

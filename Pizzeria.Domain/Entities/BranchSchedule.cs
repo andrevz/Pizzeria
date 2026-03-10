@@ -9,6 +9,8 @@ public class BranchSchedule : BaseEntity
     public Guid BranchId { get; init; }
     public Branch Branch { get; init; } = null!;
 
+    private BranchSchedule() { }
+
     private BranchSchedule(Guid branchId, DayOfWeek day, TimeOnly opensAt, TimeOnly closedAt)
     {
         ArgumentOutOfRangeException.ThrowIfGreaterThan(opensAt, closedAt);
@@ -16,6 +18,7 @@ public class BranchSchedule : BaseEntity
         Day = day;
         OpensAt = opensAt;
         ClosedAt = closedAt;
+        BranchId = branchId;
     }
 
     public static BranchSchedule Create(Guid branchId, DayOfWeek day, TimeOnly opensAt, TimeOnly closedAt)
