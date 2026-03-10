@@ -1,12 +1,15 @@
 namespace Pizzeria.Domain.Entities;
 
-public class BranchSchedule
+public class BranchSchedule : BaseEntity
 {
-    public DayOfWeek Day { get; set; }
-    public TimeOnly OpensAt { get; set; }
-    public TimeOnly ClosedAt { get; set; }
+    public DayOfWeek Day { get; private set; }
+    public TimeOnly OpensAt { get; private set; }
+    public TimeOnly ClosedAt { get; private set; }
+    
+    public Guid BranchId { get; init; }
+    public Branch Branch { get; init; } = null!;
 
-    private BranchSchedule(DayOfWeek day, TimeOnly opensAt, TimeOnly closedAt)
+    private BranchSchedule(Guid branchId, DayOfWeek day, TimeOnly opensAt, TimeOnly closedAt)
     {
         ArgumentOutOfRangeException.ThrowIfGreaterThan(opensAt, closedAt);
         
@@ -15,8 +18,8 @@ public class BranchSchedule
         ClosedAt = closedAt;
     }
 
-    public static BranchSchedule Create(DayOfWeek day, TimeOnly opensAt, TimeOnly closedAt)
+    public static BranchSchedule Create(Guid branchId, DayOfWeek day, TimeOnly opensAt, TimeOnly closedAt)
     {
-        return new BranchSchedule(day, opensAt, closedAt);
+        return new BranchSchedule(branchId, day, opensAt, closedAt);
     }
 }

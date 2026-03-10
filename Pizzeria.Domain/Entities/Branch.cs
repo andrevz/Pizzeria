@@ -2,7 +2,7 @@ using Pizzeria.Domain.ValueObjects;
 
 namespace Pizzeria.Domain.Entities;
 
-public class Branch
+public class Branch : AuditableEntity
 {
     private readonly IList<BranchSchedule> _schedules = [];
     

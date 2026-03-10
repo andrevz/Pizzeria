@@ -3,4 +3,7 @@
   <Folder Name="/src/Core/">
     <Project Path="Pizzeria.Domain\Pizzeria.Domain.csproj" />
   </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="Pizzeria.Infrastructure/Pizzeria.Infrastructure.csproj" />
+  </Folder>
 </Solution>
