@@ -7,7 +7,7 @@ public record PhoneNumber
     public string CountryCode { get; init; }
     public string NationalNumber { get; init; }
     public string? Extension { get; init; }
-    public PhoneNumberType Type { get; init; }
+    public PhoneNumberType PhoneType { get; init; }
 
     private PhoneNumber(string countryCode, string nationalNumber, string? extension, PhoneNumberType type)
     {
@@ -29,7 +29,7 @@ public record PhoneNumber
         CountryCode = countryCode;
         NationalNumber = nationalNumber;
         Extension = extension;
-        Type = type;
+        PhoneType = type;
     }
     
     private static bool IsValidCountryCode(string countryCode) =>
@@ -41,5 +41,10 @@ public record PhoneNumber
     public static PhoneNumber Create(string countryCode, string nationalNumber,  string? extension, PhoneNumberType type)
     {
         return new PhoneNumber(countryCode, nationalNumber, extension, type);
+    }
+
+    internal static PhoneNumber? Create(string empty1, string empty2, object value, object mobile)
+    {
+        throw new NotImplementedException();
     }
 }

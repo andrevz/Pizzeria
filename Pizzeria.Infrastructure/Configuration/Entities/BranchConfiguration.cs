@@ -44,7 +44,7 @@ public class BranchConfiguration : IEntityTypeConfiguration<Branch>
                 .HasColumnName("extension")
                 .HasMaxLength(5);
 
-            phone.Property(p => p.Type)
+            phone.Property(p => p.PhoneType)
                 .HasColumnName("phone_type");
         });
         
