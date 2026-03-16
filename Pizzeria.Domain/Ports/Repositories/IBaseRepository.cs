@@ -8,6 +8,7 @@ namespace Pizzeria.Domain.Ports.Repositories
         Task<TEntity?> AddAsync(TEntity entity);
         TEntity Update(TEntity entity);
         Task<TEntity?> GetByIdAsync(Guid id);
+        Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate);
         Task<ICollection<TEntity>> ListAsync();
         Task<(ICollection<TResult> Collection, int totalCount)> ListAsync<TResult>
         (

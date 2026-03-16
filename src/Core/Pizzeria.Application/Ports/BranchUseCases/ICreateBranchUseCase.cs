@@ -1,4 +1,4 @@
-using Pizzeria.Application.DTOs.Request;
+using Pizzeria.Application.DTOs.Request.Branch;
 using Pizzeria.Application.Results;
 using Pizzeria.Domain.Entities;
 

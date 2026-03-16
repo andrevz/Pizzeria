@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="Contracts/" />
     <Folder Include="Contracts/UseCases/" />
-    <Folder Include="DTOs/" />
-    <Folder Include="DTOs/Request/" />
     <Folder Include="DTOs/Response/" />
     <Folder Include="Ports/" />
     <Folder Include="Ports/BranchUseCases/" />

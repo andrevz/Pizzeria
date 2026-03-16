@@ -1,4 +1,4 @@
-using Pizzeria.Application.DTOs.Request;
+using Pizzeria.Application.DTOs.Request.Branch;
 using Pizzeria.Application.Ports.BranchUseCases;
 using Pizzeria.Application.Results;
 using Pizzeria.Domain.Entities;
@@ -21,6 +21,12 @@ public class CreateBranchUseCase : ICreateBranchUseCase
 
     public async Task<TypedResult<Branch>> ExecuteAsync(CreateBranchRequest request)
     {
+        var existingBranch = await _repository.FindAsync(b => b.Name == request.Name);
+        if (existingBranch is not null)
+        {
+            return TypedResult<Branch>.Failure("A branch with the same name already exists.");
+        }
+        
         var branch = Branch.Create(name: request.Name,
                                    address: request.Address,
                                    phone: PhoneNumber.Create(request.CountryCode, request.NationalNumber, request.Extension, request.PhoneType),

@@ -1,6 +1,6 @@
 using Pizzeria.Domain.Enums;
 
-namespace Pizzeria.Application.DTOs.Request;
+namespace Pizzeria.Application.DTOs.Request.Branch;
 
 public class CreateBranchRequest
 {
