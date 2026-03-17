@@ -1,6 +1,6 @@
 namespace Pizzeria.Application.Results;
 
-public sealed record class TypedResult<T> : BaseResult
+public sealed record TypedResult<T> : BaseResult
 {
     public T? Value { get; init; }
 

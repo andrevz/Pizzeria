@@ -7,4 +7,7 @@
   <Folder Name="/src/Infrastructure/">
     <Project Path="Pizzeria.Infrastructure/Pizzeria.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/Pizzeria.WebApi/Pizzeria.WebApi.csproj" />
+  </Folder>
 </Solution>
