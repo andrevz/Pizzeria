@@ -10,6 +10,10 @@ public static class ServiceRegistration
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddScoped<ICreateBranchUseCase, CreateBranchUseCase>();
+        services.AddScoped<IDeleteBranchUseCase, DeleteBranchUseCase>();
+        services.AddScoped<IGetAllBranchUseCase, GetAllBranchUseCase>();
+        services.AddScoped<IGetBranchUseCase, GetBranchUseCase>();
+        services.AddScoped<IUpdateBranchUseCase, UpdateBranchUseCase>();
 
         services.AddScoped<BranchUseCases>();
 

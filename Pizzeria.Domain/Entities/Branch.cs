@@ -21,6 +21,25 @@ public class Branch : AuditableEntity
         IsOpen = false;
     }
 
+    public void DeleteBranch()
+    {
+        Delete();
+    }
+
+    public void UpdateBranch(string name, string address, PhoneNumber phone, bool isOpen)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        ArgumentException.ThrowIfNullOrWhiteSpace(address);
+        ArgumentNullException.ThrowIfNull(phone);
+        
+        Name = name;
+        Address = address;
+        Phone = phone;
+        IsOpen = isOpen;
+        
+        Update();
+    }
+
     private Branch(string name, string address, PhoneNumber phone, bool isOpen)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);

@@ -10,11 +10,8 @@
     <Folder Include="Contracts/" />
     <Folder Include="Contracts/UseCases/" />
     <Folder Include="DTOs/Response/" />
-    <Folder Include="Ports/" />
-    <Folder Include="Ports/BranchUseCases/" />
+    <Folder Include="DTOs/Response/Branch/" />
     <Folder Include="Results/" />
-    <Folder Include="UseCases/" />
-    <Folder Include="UseCases/BranchUseCases/" />
   </ItemGroup>
 
   <ItemGroup>

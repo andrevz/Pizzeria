@@ -11,13 +11,14 @@ public static class CreateBranchEndpoint
         app.MapPost("/", async ([FromBody] CreateBranchRequest request, [FromServices] BranchUseCases useCases) =>
         {
             var response = await useCases.Create.ExecuteAsync(request);
-            
-            return TypedResults.CreatedAtRoute(response, "/", new { response.Value?.Id });
+
+            return TypedResults.CreatedAtRoute(response, "GetBranch", new { id = response.Value!.Id });
         })
-        .WithDescription("Create a new branch")
         .Produces(StatusCodes.Status201Created)
         .Produces(StatusCodes.Status400BadRequest)
-        .Produces(StatusCodes.Status500InternalServerError);
+        .ProducesProblem(StatusCodes.Status500InternalServerError)
+        .WithName("CreateBranch")
+        .WithDescription("Creates a new branch");
         
         return app;
     }

@@ -11,4 +11,15 @@ public class AuditableEntity : BaseEntity
         CreatedAt = DateTime.UtcNow;
         IsActive = true;
     }
+
+    protected void Delete()
+    {
+        IsActive = false;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    protected void Update()
+    {
+        UpdatedAt = DateTime.UtcNow;
+    }
 }

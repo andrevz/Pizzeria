@@ -27,7 +27,7 @@ namespace Pizzeria.Infrastructure.Adapters.Repositories
             return await _context.Set<TEntity>().FirstOrDefaultAsync(predicate);
         }
 
-        public async Task<TEntity?> GetByIdAsync(Guid id)
+        public virtual async Task<TEntity?> GetByIdAsync(Guid id)
         {
             return await _context.Set<TEntity>().FindAsync(id);
         }

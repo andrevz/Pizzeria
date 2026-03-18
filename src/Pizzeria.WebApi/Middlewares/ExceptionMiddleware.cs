@@ -31,7 +31,7 @@ public class ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddlewa
 
         var response = env.IsDevelopment()
             ? TypedResult<object>.Failure(exception.Message)
-            : TypedResult<object>.Success("Internal Server Error");
+            : TypedResult<object>.Failure("Internal Server Error");
         
         var payload = JsonSerializer.Serialize(response, options);
         

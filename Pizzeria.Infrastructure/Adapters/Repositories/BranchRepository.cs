@@ -7,12 +7,12 @@ namespace Pizzeria.Infrastructure.Adapters.Repositories
 {
     internal class BranchRepository(PizzeriaDbContext context) : BaseRepository<Branch>(context), IBranchRepository
     {
-        public override async Task<ICollection<Branch>> ListAsync()
+        public override async Task<Branch?> GetByIdAsync(Guid id)
         {
             return await _context.Branches
-                .Where(p => p.IsActive)
+                .Where(p => p.Id == id && p.IsActive)
                 .Include(p => p.Schedules)
-                .ToListAsync();
+                .FirstOrDefaultAsync();
         }
     }
 }
