@@ -18,6 +18,7 @@ public class GetAllBranchUseCase(IBranchRepository repository) : IGetAllBranchUs
             CountryCode = b.Phone.CountryCode,
             NationalNumber = b.Phone.NationalNumber,
             Extension = b.Phone.Extension,
+            PhoneType = b.Phone.PhoneType,
             IsOpen = b.IsOpen
         });
     }

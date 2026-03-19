@@ -15,10 +15,6 @@ public class Branch : AuditableEntity
 
     private Branch()
     {
-        Name = string.Empty;
-        Address = string.Empty;
-        Phone = PhoneNumber.Create(string.Empty, string.Empty, null, Enums.PhoneNumberType.Mobile);
-        IsOpen = false;
     }
 
     public void DeleteBranch()

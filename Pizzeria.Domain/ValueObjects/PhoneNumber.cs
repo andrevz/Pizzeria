@@ -4,10 +4,12 @@ namespace Pizzeria.Domain.ValueObjects;
 
 public record PhoneNumber
 {
-    public string CountryCode { get; init; }
-    public string NationalNumber { get; init; }
-    public string? Extension { get; init; }
-    public PhoneNumberType PhoneType { get; init; }
+    public string CountryCode { get; private init; }
+    public string NationalNumber { get; private init; }
+    public string? Extension { get; private init; }
+    public PhoneNumberType PhoneType { get; private init; }
+    
+    private PhoneNumber() {}
 
     private PhoneNumber(string countryCode, string nationalNumber, string? extension, PhoneNumberType type)
     {
@@ -41,10 +43,5 @@ public record PhoneNumber
     public static PhoneNumber Create(string countryCode, string nationalNumber,  string? extension, PhoneNumberType type)
     {
         return new PhoneNumber(countryCode, nationalNumber, extension, type);
-    }
-
-    internal static PhoneNumber? Create(string empty1, string empty2, object value, object mobile)
-    {
-        throw new NotImplementedException();
     }
 }

@@ -7,7 +7,7 @@ public static class UpdateBranchEndpoint
 {
     public static IEndpointRouteBuilder MapUpdateBranchEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapPut("/branches/{id}", async (Guid id, UpdateBranchRequest request, BranchUseCases useCases) =>
+        app.MapPut("{id:guid}", async (Guid id, UpdateBranchRequest request, BranchUseCases useCases) =>
         {
             var result = await useCases.Update.ExecuteAsync(id, request);
             if (!result.IsSuccess && result.ErrorMessage == "Branch not found")
