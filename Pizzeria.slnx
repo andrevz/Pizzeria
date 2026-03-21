@@ -1,13 +1,12 @@
 <Solution>
-  <Folder Name="/src/" />
   <Folder Name="/src/Core/">
     <Project Path="Pizzeria.Domain\Pizzeria.Domain.csproj" />
-    <Project Path="src/Core/Pizzeria.Application/Pizzeria.Application.csproj" />
+    <Project Path="Pizzeria.Application/Pizzeria.Application.csproj" />
   </Folder>
   <Folder Name="/src/Infrastructure/">
     <Project Path="Pizzeria.Infrastructure/Pizzeria.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Presentation/">
-    <Project Path="src/Pizzeria.WebApi/Pizzeria.WebApi.csproj" />
+    <Project Path="Pizzeria.WebApi/Pizzeria.WebApi.csproj" />
   </Folder>
 </Solution>

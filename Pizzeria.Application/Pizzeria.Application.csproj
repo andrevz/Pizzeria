@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../Pizzeria.Domain/Pizzeria.Domain.csproj" />
+    <ProjectReference Include="../Pizzeria.Domain/Pizzeria.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
