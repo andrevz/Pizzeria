@@ -10,7 +10,7 @@ public static class UpdateBranchEndpoint
         app.MapPut("{id:guid}", async (Guid id, UpdateBranchRequest request, BranchUseCases useCases) =>
         {
             var result = await useCases.Update.ExecuteAsync(id, request);
-            if (!result.IsSuccess && result.ErrorMessage == "Branch not found")
+            if (result is { IsSuccess: false, ErrorMessage: "Branch not found" })
             {
                 return Results.NotFound(result.ErrorMessage);
             }

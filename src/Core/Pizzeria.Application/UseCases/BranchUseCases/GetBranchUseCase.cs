@@ -24,7 +24,13 @@ public class GetBranchUseCase(IBranchRepository repository) : IGetBranchUseCase
             Extension = branch.Phone.Extension,
             PhoneType = branch.Phone.PhoneType,
             IsOpen = branch.IsOpen,
-            Schedules = branch.Schedules
+            Schedules = branch.Schedules.Select( bs => new BranchScheduleResponse
+            {
+                Id = bs.Id,
+                Day = bs.Day,
+                OpensAt = bs.OpensAt,
+                ClosesAt = bs.ClosedAt
+            })
         };
     }
 }

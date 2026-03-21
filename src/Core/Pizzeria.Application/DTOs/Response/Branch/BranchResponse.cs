@@ -13,5 +13,5 @@ public class BranchResponse
     public string? Extension { get; set; }
     public PhoneNumberType PhoneType { get; set; }
     public bool IsOpen { get; set; }
-    public IEnumerable<BranchSchedule> Schedules { get; set; } = [];
+    public IEnumerable<BranchScheduleResponse> Schedules { get; set; } = [];
 }

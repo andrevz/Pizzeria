@@ -7,7 +7,7 @@ public static class DeleteBranchEndpoint
 {
     public static IEndpointRouteBuilder MapDeleteBranchEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapDelete("/{id:guid}", async Task<Results<NoContent, NotFound>> (Guid id, BranchUseCases useCases) =>
+        app.MapDelete("/{id:guid}", async Task<IResult> (Guid id, BranchUseCases useCases) =>
         {
             var result = await useCases.Delete.ExecuteAsync(id);
             if (result.Value is null)

@@ -22,6 +22,16 @@ public class Branch : AuditableEntity
         Delete();
     }
 
+    public void AddBranchSchedule(BranchSchedule branchSchedule)
+    {
+        ArgumentNullException.ThrowIfNull(branchSchedule);
+
+        if (!_schedules.Contains(branchSchedule))
+        {
+            _schedules.Add(branchSchedule);
+        }
+    }
+
     public void UpdateBranch(string name, string address, PhoneNumber phone, bool isOpen)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);

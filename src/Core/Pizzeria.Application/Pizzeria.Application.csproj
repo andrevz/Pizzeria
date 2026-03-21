@@ -10,7 +10,6 @@
     <Folder Include="Contracts/" />
     <Folder Include="Contracts/UseCases/" />
     <Folder Include="DTOs/Response/" />
-    <Folder Include="DTOs/Response/Branch/" />
     <Folder Include="Results/" />
   </ItemGroup>
 

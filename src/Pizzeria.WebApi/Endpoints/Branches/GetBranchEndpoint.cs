@@ -8,7 +8,7 @@ public static class GetBranchEndpoint
 {
     public static IEndpointRouteBuilder MapGetBranchEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapGet("{id:guid}", async Task<Results<Ok<BranchResponse>, NotFound>> (Guid id, BranchUseCases useCases) =>
+        app.MapGet("{id:guid}", async Task<IResult> (Guid id, BranchUseCases useCases) =>
          {
              var branch = await useCases.Get.ExecuteAsync(id);
 

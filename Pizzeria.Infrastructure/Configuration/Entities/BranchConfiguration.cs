@@ -14,6 +14,11 @@ public class BranchConfiguration : IEntityTypeConfiguration<Branch>
 
         builder.Property(p => p.Id)
             .HasColumnName("branch_id");
+        
+        builder.HasMany(p => p.Schedules)
+            .WithOne(p => p.Branch)
+            .HasForeignKey(p => p.BranchId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.Property(p => p.Name)
             .HasColumnName("name")

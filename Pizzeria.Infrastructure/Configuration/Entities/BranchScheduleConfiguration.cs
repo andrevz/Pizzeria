@@ -29,10 +29,5 @@ public class BranchScheduleConfiguration : IEntityTypeConfiguration<BranchSchedu
         builder.Property(p => p.BranchId)
             .HasColumnName("branch_id")
             .IsRequired();
-        
-        builder.HasOne(p => p.Branch)
-            .WithMany(b => b.Schedules)
-            .HasForeignKey(p => p.BranchId)
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

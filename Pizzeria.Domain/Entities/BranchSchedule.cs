@@ -7,7 +7,7 @@ public class BranchSchedule : BaseEntity
     public TimeOnly ClosedAt { get; private set; }
     
     public Guid BranchId { get; init; }
-    public Branch Branch { get; init; } = null!;
+    public Branch? Branch { get; init; }
 
     private BranchSchedule() { }
 
