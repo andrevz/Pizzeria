@@ -13,7 +13,7 @@ public class Branch : AuditableEntity
 
     public IReadOnlyCollection<BranchSchedule> Schedules => _schedules.AsReadOnly();
 
-    private Branch()
+    protected Branch()
     {
     }
 

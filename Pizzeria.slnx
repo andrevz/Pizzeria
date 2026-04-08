@@ -1,6 +1,6 @@
 <Solution>
   <Folder Name="/src/Core/">
-    <Project Path="Pizzeria.Domain\Pizzeria.Domain.csproj" />
+    <Project Path="Pizzeria.Domain/Pizzeria.Domain.csproj" />
     <Project Path="Pizzeria.Application/Pizzeria.Application.csproj" />
   </Folder>
   <Folder Name="/src/Infrastructure/">

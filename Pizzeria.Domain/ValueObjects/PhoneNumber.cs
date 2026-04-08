@@ -8,8 +8,10 @@ public record PhoneNumber
     public string NationalNumber { get; private init; }
     public string? Extension { get; private init; }
     public PhoneNumberType PhoneType { get; private init; }
-    
-    private PhoneNumber() {}
+
+    protected PhoneNumber()
+    {
+    }
 
     private PhoneNumber(string countryCode, string nationalNumber, string? extension, PhoneNumberType type)
     {
